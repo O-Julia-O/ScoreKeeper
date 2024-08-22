@@ -20,6 +20,8 @@ p1Button.addEventListener("click", function () {
       isGameOver = true;
       p1ScoreText.classList.add("has-text-success");
       p2ScoreText.classList.add("has-text-danger");
+      p1Button.disabled = true;
+      p2Button.disabled = true;
     }
 
     p1ScoreText.textContent = p1Score;
@@ -36,6 +38,8 @@ p2Button.addEventListener("click", function () {
       isGameOver = true;
       p1ScoreText.classList.add("has-text-danger");
       p2ScoreText.classList.add("has-text-success");
+      p1Button.disabled = true;
+      p2Button.disabled = true;
     }
 
     p2ScoreText.textContent = p2Score;
@@ -57,4 +61,6 @@ function reset() {
     p2ScoreText.textContent = 0;
     p1ScoreText.classList.remove("has-text-success", "has-text-danger");
     p2ScoreText.classList.remove("has-text-success", "has-text-danger");
+    p1Button.disabled = false;
+    p2Button.disabled = false;
 }
