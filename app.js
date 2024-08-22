@@ -2,7 +2,8 @@ const p1Button = document.getElementById("p1Button");
 const p2Button = document.getElementById("p2Button");
 const p1ScoreText = document.getElementById("p1ScoreText");
 const p2ScoreText = document.getElementById("p2ScoreText");
-const resetButton = document.getElementById("reset")
+const resetButton = document.getElementById("reset");
+const winningScoreSelect = document.getElementById("playto");
 
 let p1Score = 0;
 let p2Score = 0;
@@ -37,10 +38,17 @@ p2Button.addEventListener("click", function () {
   }
 });
 
-resetButton.addEventListener("click", function() {
+winningScoreSelect.addEventListener("change", function() {
+    winningScore = parseInt(this.value);
+    reset();
+});
+
+resetButton.addEventListener("click", reset);
+
+function reset() {
     isGameOver = false;
     p1Score = 0;
     p2Score = 0;
     p1ScoreText.textContent = 0;
     p2ScoreText.textContent = 0;
-});
+}
