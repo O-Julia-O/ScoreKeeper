@@ -7,7 +7,7 @@ const winningScoreSelect = document.getElementById("playto");
 
 let p1Score = 0;
 let p2Score = 0;
-let winningScore = 5;
+let winningScore = +winningScoreSelect.value;
 let isGameOver = false;
 
 p1Button.addEventListener("click", function () {
@@ -18,6 +18,8 @@ p1Button.addEventListener("click", function () {
     /* if score equals than finish the game */
     if (p1Score === winningScore) {
       isGameOver = true;
+      p1ScoreText.classList.add("has-text-success");
+      p2ScoreText.classList.add("has-text-danger");
     }
 
     p1ScoreText.textContent = p1Score;
@@ -32,6 +34,8 @@ p2Button.addEventListener("click", function () {
     /* if score equals than finish the game */
     if (p2Score === winningScore) {
       isGameOver = true;
+      p1ScoreText.classList.add("has-text-danger");
+      p2ScoreText.classList.add("has-text-success");
     }
 
     p2ScoreText.textContent = p2Score;
@@ -51,4 +55,6 @@ function reset() {
     p2Score = 0;
     p1ScoreText.textContent = 0;
     p2ScoreText.textContent = 0;
+    p1ScoreText.classList.remove("has-text-success", "has-text-danger");
+    p2ScoreText.classList.remove("has-text-success", "has-text-danger");
 }
