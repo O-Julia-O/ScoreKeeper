@@ -34,24 +34,14 @@ function updateScore(player, opponent) {
 
     player.display.textContent = player.score;
   }
+}
+
+p1.button.addEventListener("click", function () {
+    updateScore(p1, p2);
 });
 
-p2Button.addEventListener("click", function () {
-    /* if the game is not over, than score */
-  if (!isGameOver) {
-    p2Score += 1;
-
-    /* if score equals than finish the game */
-    if (p2Score === winningScore) {
-      isGameOver = true;
-      p1ScoreText.classList.add("has-text-danger");
-      p2ScoreText.classList.add("has-text-success");
-      p1Button.disabled = true;
-      p2Button.disabled = true;
-    }
-
-    p2ScoreText.textContent = p2Score;
-  }
+p2.button.addEventListener("click", function () {
+   updateScore(p2, p1);
 });
 
 winningScoreSelect.addEventListener("change", function() {
