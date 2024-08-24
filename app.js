@@ -13,14 +13,12 @@ const p2 = {
 const resetButton = document.getElementById("reset");
 const winningScoreSelect = document.getElementById("playto");
 
-let p1Score = 0;
-let p2Score = 0;
 let winningScore = +winningScoreSelect.value;
 let isGameOver = false;
 
 function updateScore(player, opponent) {
-    /* if the game is not over, than score */
-  if (!isGameOver) {
+   /* if the game is not over, than score */
+   if (!isGameOver) {
     player.score += 1;
 
     /* if score equals than finish the game */
@@ -37,7 +35,7 @@ function updateScore(player, opponent) {
 }
 
 p1.button.addEventListener("click", function () {
-    updateScore(p1, p2);
+   updateScore(p1, p2);
 });
 
 p2.button.addEventListener("click", function () {
@@ -53,11 +51,11 @@ resetButton.addEventListener("click", reset);
 
 function reset() {
     isGameOver = false;
-    
+
     for (let p of [p1, p2]) {
       p.score = 0;
       p.display.textContent = 0;
       p.display.classList.remove("has-text-success", "has-text-danger");
-    p.button.disabled = false;
-}
+      p.button.disabled = false;
+    }
 }
