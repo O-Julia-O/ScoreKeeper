@@ -18,21 +18,21 @@ let p2Score = 0;
 let winningScore = +winningScoreSelect.value;
 let isGameOver = false;
 
-p1Button.addEventListener("click", function () {
+function updateScore(player, opponent) {
     /* if the game is not over, than score */
   if (!isGameOver) {
-    p1Score += 1;
+    player.score += 1;
 
     /* if score equals than finish the game */
-    if (p1Score === winningScore) {
+    if (player.score === winningScore) {
       isGameOver = true;
-      p1ScoreText.classList.add("has-text-success");
-      p2ScoreText.classList.add("has-text-danger");
-      p1Button.disabled = true;
-      p2Button.disabled = true;
+      player.display.classList.add("has-text-success");
+      opponent.display.classList.add("has-text-danger");
+      player.button.disabled = true;
+      opponent.button.disabled = true;
     }
 
-    p1ScoreText.textContent = p1Score;
+    player.display.textContent = player.score;
   }
 });
 
