@@ -1,7 +1,15 @@
-const p1Button = document.getElementById("p1Button");
-const p2Button = document.getElementById("p2Button");
-const p1ScoreText = document.getElementById("p1ScoreText");
-const p2ScoreText = document.getElementById("p2ScoreText");
+const p1 = {
+  score: 0,
+  button: document.getElementById("p1Button"),
+  display: document.getElementById("p1ScoreText")
+}
+
+const p2 = {
+  score: 0,
+  button: document.getElementById("p2Button"),
+  display: document.getElementById("p2ScoreText")
+}
+
 const resetButton = document.getElementById("reset");
 const winningScoreSelect = document.getElementById("playto");
 
